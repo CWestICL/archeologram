@@ -3,6 +3,7 @@ const grid = document.getElementById("main-grid");
 const canvas = document.getElementById("create-grid");
 const gridBtn = document.getElementById("grid-btn");
 const gridInput = document.getElementById("rowcol-input");
+const nameInput = document.getElementById("name-input");
 const exportArea = document.getElementById("export-area");
 
 gridBtn.addEventListener("click", function() {
@@ -61,7 +62,7 @@ function updateCanvas() {
             col.innerHTML += `<div class="number">${nums[x]}</div>`;
         }
     }
-    exportArea.innerText = puzz.flat().join("") + ",";
+    exportArea.innerText = puzz.flat().join("") + "," + exportName();
 }
 
 function exportCanvas() {
@@ -85,6 +86,11 @@ function exportCanvas() {
         finalArr.push(minArr);
     }
     return finalArr;
+}
+
+function exportName() {
+    let str = nameInput.value;
+    return str;
 }
 
 function getRowNums(num) {
@@ -144,3 +150,58 @@ function genPuzzle(puzz) {
 }
 
 genPuzzle(testPuzzle);
+
+/*
+function caesarEncode (msg, key) {
+  const alph = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  let alphCap = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  let newMsg = "";
+
+  for (i = 0; i < key; i++) {
+    let temp = alphCap.shift();
+    alphCap.push(temp);
+  }
+
+  //console.log(alphCap);
+  
+  for (i = 0; i < msg.length; i++) {
+    for (x = 0; x < alph.length; x++) {
+      if (msg[i] === alph[x]) {
+        newMsg += alphCap[x];
+      }
+    }
+    if (msg[i] === " ") {
+      newMsg += " ";
+    }
+  }
+  return newMsg;
+  
+}
+function caesarDecode (cyp, key) {
+    const alphCap = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    let alph = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    let newCyp = "";
+  
+    console.log("Key:",key);
+  
+    for (i = 0; i < key; i++) {
+      let temp = alph.pop();
+      console.log("Temp:",temp);
+      alph.unshift(temp);
+    }
+  
+    console.log(alph);
+    
+    for (i = 0; i < cyp.length; i++) {
+      for (x = 0; x < alphCap.length; x++) {
+        if (cyp[i] === alphCap[x]) {
+          newCyp += alph[x];
+        }
+      }
+      if (cyp[i] === " ") {
+        newCyp += " ";
+      }
+    }
+    return newCyp;
+  }
+*/
