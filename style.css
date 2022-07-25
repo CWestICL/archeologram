@@ -1,0 +1,42 @@
+.row {
+    display: flex;
+    justify-content: center;
+}
+.block {
+    background-color: lightgrey;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+}
+.block.solid {
+    background-color: black;
+}
+.row-div {
+    background-color: black;
+    width: auto;
+    height: 1px;
+}
+.col-div {
+    background-color: black;
+    width: 1px;
+    height: auto;
+}
+.nums {
+    background-color: red;
+    min-width: 30px;
+    min-height: 30px;
+    margin: 1px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.nums.col {
+    flex-direction: column;
+    min-height: 80px;
+}
+.nums.row {
+    min-width: 80px;
+}
+.number {
+    margin: 2px;
+}

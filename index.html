@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Archeolograms</title>
+</head>
+<body>
+    <div id="main-grid"></div>
+    <div id="create-controls">
+        <h3>Controls:</h3>
+        <label for="rowcol-input">Size: </label>
+        <input type="number" name="rowcol-input" id="rowcol-input" min="5" max="15" value="5" step="5">
+        <button id="grid-btn">New Grid</button>
+    </div>
+    <div id="create-grid"></div>
+    <div id="export">
+        <label for="export-area">Export: </label>
+        <textarea name="export-area" id="export-area" cols="30" rows="1"></textarea>
+    </div>
+</body>
+</html>
