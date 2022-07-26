@@ -32,11 +32,25 @@
 }
 .nums.col {
     flex-direction: column;
-    min-height: 80px;
+    min-height: 180px;
 }
 .nums.row {
-    min-width: 80px;
+    min-width: 100px;
+}
+.nums.col.row {
+    background-color:unset;
 }
 .number {
     margin: 2px;
+    font-weight: bold;
+}
+.grid-container {
+    display: grid;
+    place-items: center;
+    background-color: cadetblue;
+    min-width: 600px;
+    min-height: 680px;
+}
+.grid-div {
+    width: fit-content;
 }

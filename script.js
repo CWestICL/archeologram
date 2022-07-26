@@ -20,6 +20,9 @@ gridBtn.addEventListener("click", function() {
                 if (x === 0) {
                     row.innerHTML += `<div class="nums row col"></div>`;
                 }
+                else if (x % 5 === 0) {
+                    row.innerHTML += `<div class="col-div"></div>`;
+                }
                 row.innerHTML += `<div id="num-col-${x}" class="nums col"></div>`;
             }
             else {
@@ -44,9 +47,9 @@ gridBtn.addEventListener("click", function() {
 
 function updateCanvas() {
     let puzz = exportCanvas();
-    console.log(puzz.length);
+    //console.log(puzz.length);
     for (y=0;y<puzz.length;y++) {
-        console.log(y);
+        //console.log(y);
         let row = document.getElementById("num-row-" + (y+1));
         let nums = getRowNums(y);
         row.innerHTML = ``;
@@ -89,8 +92,33 @@ function exportCanvas() {
 }
 
 function exportName() {
-    let str = nameInput.value;
-    return str;
+    let str = nameInput.value.toLowerCase();
+
+    if (!str) {
+        str = "artifact";
+    }
+
+    const alph = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    let alphCap = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    let encStr = "";
+
+    for (i = 0; i < 8; i++) {
+        let temp = alphCap.shift();
+        alphCap.push(temp);
+    }
+    
+    for (i = 0; i < str.length; i++) {
+        for (x = 0; x < alph.length; x++) {
+        if (str[i] === alph[x]) {
+            encStr += alphCap[x];
+        }
+        }
+        if (str[i] === " ") {
+            encStr += " ";
+        }
+    }
+
+    return encStr;
 }
 
 function getRowNums(num) {
