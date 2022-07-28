@@ -1,41 +1,101 @@
+body {
+    background-color:rgb(59, 26, 3);
+    background-image: url("img/rocks2.jpg");
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+    padding: 5px;
+}
+h1 {
+    text-align: center;
+    color: wheat;
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-weight: normal;
+    margin: 0px;
+    font-size: 2.4em;
+}
+h3 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    margin: 10px;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+h4 {
+    font-family: 'IM Fell DW Pica SC', serif;
+    margin: 10px;
+    font-size: 1.4em;
+}
+#main-container {
+    display: flex;
+    width: 100%;
+}
+#main-menu {
+    width: 450px;
+    background-color: #b46e3c;
+}
+#main-menu button {
+    margin: 0 10px;
+}
+#game-hud {
+    background-color:wheat;
+    height: 75px;
+}
+#game {
+    width: 100%;
+}
+.puzzle-button {
+    background-color: wheat;
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 150px;
+}
 .row {
     display: flex;
     justify-content: center;
 }
 .block {
-    background-color: lightgrey;
+    background-color:#f5deb3;
     width: 30px;
     height: 30px;
     margin: 1px;
+    border-radius: 3px;
+}
+.block.brush {
+    background-color:rgb(253, 179, 105);
 }
 .block.solid {
-    background-color: black;
+    /*background-color: rgb(86, 56, 0);*/
+    background-color:#3b1a03;
+}
+.block.mistake {
+    background-color:rgb(255, 130, 130);
 }
 .row-div {
-    background-color: black;
     width: auto;
-    height: 1px;
+    height: 3px;
 }
 .col-div {
-    background-color: black;
-    width: 1px;
+    width: 3px;
     height: auto;
 }
 .nums {
-    background-color: red;
+    background-color:rgb(180, 110, 60);
     min-width: 30px;
     min-height: 30px;
     margin: 1px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    border-radius: 5px;
 }
 .nums.col {
     flex-direction: column;
     min-height: 180px;
 }
 .nums.row {
-    min-width: 100px;
+    min-width: 110px;
 }
 .nums.col.row {
     background-color:unset;
@@ -43,14 +103,43 @@
 .number {
     margin: 2px;
     font-weight: bold;
+    font-family: 'Special Elite', cursive;
+    color: rgb(59, 26, 3);
+    background-color: #9a5b2f;
+    border-radius: 15px;
 }
 .grid-container {
     display: grid;
     place-items: center;
-    background-color: cadetblue;
+    /*background-image: url("img/rocks2.jpg");*/
     min-width: 600px;
     min-height: 680px;
 }
 .grid-div {
     width: fit-content;
+}
+#tool-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.tool-button {
+    box-sizing: border-box;
+    background-color:wheat;
+    width: 90%;
+    height: 40%;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+}
+.active {
+    background-color: rgb(221, 164, 114);
+    border: solid 3px rgb(180, 110, 60);
+}
+.load-container {
+    margin: 10px;
+}
+#load-area {
+    background-color:wheat;
+    resize: none;
 }
