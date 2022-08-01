@@ -2,9 +2,13 @@ body {
     background-color:rgb(59, 26, 3);
     background-image: url("img/rocks2.jpg");
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 header {
     padding: 5px;
+    background-color: #852c04;
 }
 h1 {
     text-align: center;
@@ -20,6 +24,17 @@ h3 {
     font-size: 1.8em;
     font-weight: normal;
 }
+h3.win {
+    font-size: 1.6em;
+    margin: 3px;
+}
+h3.win-sub {
+    font-size: 1.2em;
+    margin: 0;
+}
+h3.game-over {
+    font-size: 3em;
+}
 h4 {
     font-family: 'IM Fell DW Pica SC', serif;
     margin: 10px;
@@ -31,25 +46,55 @@ h4 {
 }
 #main-menu {
     width: 450px;
-    background-color: #b46e3c;
-}
-#main-menu button {
-    margin: 0 10px;
+    background-color: #de9c63;
 }
 #game-hud {
     background-color:wheat;
     height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.life {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin: 5px;
+    background-color:rgb(255, 130, 130);
+}
+.life.full {
+    background-color: limegreen;
 }
 #game {
     width: 100%;
 }
+.puzzle-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 .puzzle-button {
+    box-sizing: border-box;
     background-color: wheat;
-    margin: 5px auto;
+    margin: 3px;
     padding: 5px;
     border-radius: 5px;
+    font-size: 0.9em;
     font-weight: bold;
     width: 150px;
+}
+.puzzle-button.help {
+    text-align: center;
+    margin: 20px;
+}
+.puzzle-button.active {
+    border: solid 3px rgb(59, 26, 3);
+    padding: 2px;
+}
+.puzzle-button.complete {
+    background-color: limegreen;
+    text-decoration: line-through;
 }
 .row {
     display: flex;
@@ -64,6 +109,8 @@ h4 {
 }
 .block.brush {
     background-color:rgb(253, 179, 105);
+    background-image: url("img/brush-block.png");
+    background-size: 100%;
 }
 .block.solid {
     /*background-color: rgb(86, 56, 0);*/
@@ -71,6 +118,8 @@ h4 {
 }
 .block.mistake {
     background-color:rgb(255, 130, 130);
+    background-image: url("img/error-block.png");
+    background-size: 100%;
 }
 .row-div {
     width: auto;
@@ -115,6 +164,10 @@ h4 {
     min-width: 600px;
     min-height: 680px;
 }
+.grid-container.win {
+    min-width: auto;
+    min-height: 70%;
+}
 .grid-div {
     width: fit-content;
 }
@@ -132,14 +185,47 @@ h4 {
     display: grid;
     place-items: center;
 }
-.active {
-    background-color: rgb(221, 164, 114);
-    border: solid 3px rgb(180, 110, 60);
+.tool-button.active {
+    background-color: #de9c63;
+    border: solid 3px #b54405;
 }
 .load-container {
     margin: 10px;
 }
 #load-area {
-    background-color:wheat;
     resize: none;
+}
+.how-to-play {
+    width: 700px;
+    height: 600px;
+    background-color: #de9c63;
+    padding: 5px;
+    border-radius: 5px;
+}
+.how-to-play p {
+    margin: 15px 10px;
+}
+.how-to-play h3 {
+    text-align: center;
+}
+.how-to-play.game-over {
+    display: grid;
+    place-items: center;
+}
+.create-controls {
+    background-color:wheat;
+    padding: 10px;
+}
+.create-controls label {
+    font-weight: bold;
+}
+#export-area {
+    resize: none;
+}
+.clear {
+    display: flex;
+    justify-content: flex-end;
+}
+img {
+    width: 80px;
 }

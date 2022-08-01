@@ -19,56 +19,79 @@
     <div id="main-container">
         <div id="main-menu">
             <h3>Puzzles:</h3>
+            <h4>Easy</h4>
             <div class="puzzle-section">
-                <h4>Easy</h4>
-                <div class="puzzle-button">1. ????????????</div>
-                <div class="puzzle-button">2. ????????????</div>
-                <div class="puzzle-button">3. ????????????</div>
+                <div class="puzzle-button" id="e1-btn">1. ???????????</div>
+                <div class="puzzle-button" id="e2-btn">2. ???????????</div>
+                <div class="puzzle-button" id="e3-btn">3. ???????????</div>
             </div>
+            <h4>Medium</h4>
             <div class="puzzle-section">
-                <h4>Medium</h4>
-                <div class="puzzle-button">1. ????????????</div>
-                <div class="puzzle-button">2. ????????????</div>
-                <div class="puzzle-button">3. ????????????</div>
+                <div class="puzzle-button" id="m1-btn">1. ???????????</div>
+                <div class="puzzle-button" id="m2-btn">2. ???????????</div>
+                <div class="puzzle-button" id="m3-btn">3. ???????????</div>
             </div>
+            <h4>Hard</h4>
             <div class="puzzle-section">
-                <h4>Hard</h4>
-                <div class="puzzle-button">1. ????????????</div>
-                <div class="puzzle-button">2. ????????????</div>
-                <div class="puzzle-button">3. ????????????</div>
+                <div class="puzzle-button" id="h1-btn">1. ???????????</div>
+                <div class="puzzle-button" id="h2-btn">2. ???????????</div>
+                <div class="puzzle-button" id="h3-btn">3. ???????????</div>
             </div>
             <h4>Load Custom:</h4>
             <div class="puzzle-section">
                 <div class="load-container">
                     <textarea name="export-area" id="load-area" cols="32" rows="4"></textarea>
+                    <br>
+                    <button id="load-btn">Load</button>
                 </div>
             </div>
-            <button id="load-btn">Load</button>
+            <div class="puzzle-section">
+                <div class="puzzle-button help" id="help-btn">How to Play</div>
+            </div>
         </div>
         <div id="game">
             <div id="game-hud"></div>
             <div class="grid-container">
-                <div id="main-grid" class="grid-div"></div>
+                <div id="main-grid" class="grid-div">
+                    <div class="how-to-play">
+                        <h3>How to Play</h3>
+                        <h4>Hammer</h4>
+                        <p>Use the hammer to chip away blocks that are part of the puzzle. Be careful not to chip away incorrect blocks or you lose a life.</p>
+                        <h4>Brush</h4>
+                        <p>Use the brush to mark blocks you've deduced aren't part of the puzzle.</p>
+                        <h4>Row and Column Numbers</h4>
+                        <p>The numbers next to each row and column tell you how many clusters of blocks should be revealed.</p>
+                        <div class="row"><div class="nums row"><div class="number">4</div></div><div class="block solid"></div><div class="block solid"></div><div class="block solid"></div><div class="block solid"></div><div class="block"></div></div>
+                        <div class="row"><div class="nums row"><div class="number">2</div></div><div class="block"></div><div class="block"></div><div class="block solid"></div><div class="block solid"></div><div class="block"></div></div>
+                        <p>Multiple numbers mean there are multiple clusters in the row/column. Each cluster of blocks will have a gap of at least one block between them.</p>
+                        <div class="row"><div class="nums row"><div class="number">1</div><div class="number">2</div></div><div class="block"></div><div class="block solid"></div><div class="block"></div><div class="block solid"></div><div class="block solid"></div></div>
+                        <div class="row"><div class="nums row"><div class="number">1</div><div class="number">1</div><div class="number">1</div></div><div class="block solid"></div><div class="block"></div><div class="block solid"></div><div class="block"></div><div class="block solid"></div></div>
+                        <p>Good luck and have fun!</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div id="load-menu"></div>
-    <div id="create-controls">
-        <h3>Controls:</h3>
-        <label for="rowcol-input">Size: </label>
-        <input type="number" name="rowcol-input" id="rowcol-input" min="5" max="15" value="5" step="5">
-        <button id="grid-btn">New Grid</button>
-    </div>
-    <div id="name-controls">
-        <label for="rowcol-input">Name: </label>
-        <input type="text" name="name-input" id="name-input" maxlength="30" placeholder="Type here..." onchange="updateCanvas();">
+    <div id="create-controls" class="create-controls">
+        <div id="size-controls">
+            <h3>Puzzle Creator:</h3>
+            <label for="rowcol-input">Size: </label>
+            <input type="number" name="rowcol-input" id="rowcol-input" min="5" max="15" value="5" step="5">
+            <button id="grid-btn">New Grid</button>
+        </div>
+        <div id="name-controls">
+            <label for="rowcol-input">Name: </label>
+            <input type="text" name="name-input" id="name-input" maxlength="30" placeholder="Type here..." onchange="updateCanvas();">
+        </div>
     </div>
     <div class="grid-container">
         <div id="create-grid" class="grid-div"></div>
     </div>
-    <div id="export">
+    <div id="export" class="create-controls">
         <label for="export-area">Export: </label>
-        <textarea name="export-area" id="export-area" cols="30" rows="1"></textarea>
+        <br>
+        <textarea name="export-area" id="export-area" cols="92" rows="4"></textarea>
+        <div class="clear"><button id="clear-btn">Clear Save Data</button></div>
     </div>
 </body>
 </html>
