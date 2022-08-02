@@ -493,10 +493,10 @@ function checkComplete(puzzName,puzzCode) {
                 let row = document.getElementById("win-row-" + i);
                 for (x=0;x<gridSize;x++) {
                     if (Number(puzzCode[0])) {
-                        row.innerHTML += `<div id="block-${i}-${x}" class="block solid"></div>`;
+                        row.innerHTML += `<div id="block-${i}-${x}" class="block win solid"></div>`;
                     }
                     else {
-                        row.innerHTML += `<div id="block-${i}-${x}" class="block"></div>`;
+                        row.innerHTML += `<div id="block-${i}-${x}" class="block win"></div>`;
                     }
                     puzzCode = puzzCode.slice(1);
                 }

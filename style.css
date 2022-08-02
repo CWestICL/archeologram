@@ -121,6 +121,14 @@ h4 {
     background-image: url("img/error-block.png");
     background-size: 100%;
 }
+.block.win {
+    margin: 0;
+    border-radius: 0;
+    /*
+    width: 10px;
+    height: 10px;
+    */
+}
 .row-div {
     width: auto;
     height: 3px;
@@ -228,4 +236,7 @@ h4 {
 }
 img {
     width: 80px;
+}
+footer {
+    text-align: end;
 }
