@@ -240,3 +240,15 @@ img {
 footer {
     text-align: end;
 }
+@media only screen and (max-width: 1050px) {
+    #main-container {
+        flex-direction: column;
+    }
+    #main-menu {
+        width: 100%;
+    }
+    .puzzle-section {
+        align-items: flex-start;
+        margin-left: 5px;
+    }
+}
