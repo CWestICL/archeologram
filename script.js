@@ -1,6 +1,6 @@
 const puzzleE1 = "1111101110111111111101110,DIAM";
 const puzzleE2 = "0111011111101010111001010,ASCTT";
-const puzzleE3 = "0000001000111110011100101,JMIZ ABIBCM";
+const puzzleE3 = "0010000010011011111011100,NWWBXZQVB";
 const puzzleM1 = "0001111000001101110001110011101111111111100100110110110010011111111111011110111000110111000001111000,KWXXMZ KWQV";
 const puzzleM2 = "0111110000011111000000111000000011111100011111001011111110101011101010110001110011111110000111110000,RCO";
 const puzzleM3 = "000000111000000000011111110000001111000111100111100000001111111111111111111111111111111111011100111001110011100111001110011100111001110011100111001110011100111001110111111111111111111111111111111110000000000011111111111111111,BMUXTM";
@@ -115,7 +115,7 @@ gridBtn.addEventListener("click", function() {
     canvas.innerHTML = ``;
     for (i=0;i-1<gridInput.value;i++) {
         if ((i-1) % 5 === 0 && i !== 1) {
-            console.log("Break");
+            //console.log("Break");
             canvas.innerHTML += `<div class="row-div"></div>`;
         }
         canvas.innerHTML += `<div id="canv-row-${i}" class="row"></div>`;
@@ -280,9 +280,18 @@ function genPuzzle(puzz) {
     let puzzName = puzz[1];
     let gridSize = Math.sqrt(puzzCode.length);
     let puzzArr = arrayPuzzle(puzzCode,gridSize);
-    console.log(puzzCode,puzzName,gridSize);
+    //console.log(puzzCode,puzzName,gridSize);
     let lives = 3;
     try {
+        if (puzz.length !== 2) {
+            throw new Error("Incompatible puzzle code");
+        }
+        if (puzzCode.length !== 25 && puzzCode.length !== 100 && puzzCode.length !== 225) {
+            throw new Error("Incompatible puzzle code");
+        }
+        if (puzzName.length < 1 || puzzName.length > 30) {
+            throw new Error("Incompatible puzzle code");
+        }
         grid.innerHTML = ``;
         for (i=0;i-1<gridSize;i++) {
             if ((i-1) % 5 === 0 && i !== 1) {
@@ -318,12 +327,12 @@ function genPuzzle(puzz) {
             }
         }
 
-        console.log(puzzArr);
+        //console.log(puzzArr);
         for (y=0;y<puzzArr.length;y++) {
             //console.log(y);
             let row = document.getElementById("main-num-row-" + (y+1));
             let nums = getRowNums(puzzArr,y);
-            console.log(nums);
+            //console.log(nums);
             row.innerHTML = ``;
             for (x=0;x<nums.length;x++) {
                 row.innerHTML += `<div class="number">${nums[x]}</div>`;
@@ -344,7 +353,7 @@ function genPuzzle(puzz) {
     
         for (i = 0; i < 8; i++) {
             let temp = alph.pop();
-            console.log("Temp:",temp);
+            //console.log("Temp:",temp);
             alph.unshift(temp);
         }
         
@@ -562,7 +571,7 @@ function updateProgress() {
     if (h3Btn.classList.contains("active")) {
         progress.h3 = true;
     }
-    console.log(progress);
+    //console.log(progress);
     localStorage.setItem("progress",JSON.stringify(progress));
     loadProgress();
 }
@@ -579,7 +588,7 @@ function loadProgress() {
             e2Btn.classList.add("complete");
         }
         if (progress.e3) {
-            e3Btn.innerText = "3. BEAR STATUE";
+            e3Btn.innerText = "3. FOOTPRINT";
             e3Btn.classList.add("complete");
         }
         if (progress.m1) {
@@ -608,5 +617,5 @@ function loadProgress() {
         }
     }
 }
-console.log(localStorage.getItem("progress"));
+//console.log(localStorage.getItem("progress"));
 loadProgress();
